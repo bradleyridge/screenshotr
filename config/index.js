@@ -1,4 +1,6 @@
 import config from '12factor-config';
+import os from 'os';
+import path from 'path';
 
 export default config({
   nodeEnv: {
@@ -42,5 +44,9 @@ export default config({
     required: false,
     default: 812, // iPhone X
   },
-
+  destination: {
+    env: 'SCREENSHOTR_DESINATION',
+    required: false,
+    default: path.join(os.tmpdir(), 'screenshotr'),
+  },
 });

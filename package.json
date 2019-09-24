@@ -1,9 +1,10 @@
 {
   "name": "screenshotr",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "Puppeteer screenshot utility executing on URL screenshot configurations.",
   "main": "build/index.js",
   "scripts": {
+    "build": "babel ./ -d build --only ./lib,./index.js,./config",
     "dev": "env-cmd babel-node examples/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -23,6 +24,7 @@
     "chalk": "^2.4.2",
     "fs": "0.0.1-security",
     "log": "^6.0.0",
+    "os": "^0.1.1",
     "puppeteer": "^1.20.0"
   },
   "devDependencies": {

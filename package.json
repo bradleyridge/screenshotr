@@ -1,6 +1,6 @@
 {
   "name": "screenshotr",
-  "version": "1.0.0-alpha.8",
+  "version": "1.0.0-alpha.9",
   "description": "Puppeteer screenshot utility executing on URL screenshot configurations.",
   "main": "build/lib/index.js",
   "scripts": {

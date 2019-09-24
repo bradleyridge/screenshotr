@@ -33,7 +33,7 @@ const validateDestinationDirectory = (destiationPath = _config.default.destinati
 };
 
 var _default = async ({
-  screenshotConfigurations,
+  screenshots,
   destination
 }) => {
   _utils.log.inform('Executing Screenshotr');
@@ -47,20 +47,20 @@ var _default = async ({
     _utils.log.debug('- opening new page');
 
     const page = await browser.newPage();
-    const results = await captureScreenshots(screenshotConfigurations, page, destination);
+    const results = await captureScreenshots(screenshots, page, destination);
 
     _utils.log.debug('- closing browser');
 
     await browser.close();
     browser = null;
-    const screenshots = results.filter(result => !result.error);
+    const successfulResults = results.filter(result => !result.error);
     const errors = results.filter(result => !!result.error);
 
-    _utils.log.succeed(`Captured ${screenshots.length} Screenshots with Screenshotr`);
+    _utils.log.succeed(`Captured ${successfulResults.length} Screenshots with Screenshotr`);
 
     return {
-      screenshots,
       errors,
+      screenshots: successfulResults,
       destination
     };
   } catch (error) {

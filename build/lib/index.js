@@ -53,7 +53,6 @@ var _default = async ({
 
     await browser.close();
     browser = null;
-    console.log(results);
     return results;
   } catch (error) {
     _utils.log.error(`Screenshotr Failed: ${error}`);

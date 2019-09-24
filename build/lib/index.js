@@ -34,7 +34,7 @@ const validateDestinationDirectory = (destiationPath = _config.default.destinati
 
 var _default = async ({
   screenshots,
-  destination
+  destination = _config.default.destination
 }) => {
   _utils.log.inform('Executing Screenshotr');
 

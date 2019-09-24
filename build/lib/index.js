@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const captureScreenshots = async (screenshots, page, destinationFolder) => {
   const screenshot = screenshots.pop();
   const output = await (0, _captureScreenshot.default)(screenshot, page, destinationFolder);
-  if (screenshots.length > 0) return captureScreenshots(screenshots, page, destinationFolder);
+  if (screenshots.length > 0) return [output, ...(await captureScreenshots(screenshots, page, destinationFolder))];
   return [output];
 };
 
@@ -47,12 +47,14 @@ var _default = async ({
     _utils.log.debug('- opening new page');
 
     const page = await browser.newPage();
-    await captureScreenshots(screenshots, page, destination);
+    const results = await captureScreenshots(screenshots, page, destination);
 
     _utils.log.debug('- closing browser');
 
     await browser.close();
     browser = null;
+    console.log(results);
+    return results;
   } catch (error) {
     _utils.log.error(`Screenshotr Failed: ${error}`);
   }

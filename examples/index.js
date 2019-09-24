@@ -1,6 +1,6 @@
 import path from 'path';
 
-import screenshotr from '../build/lib';
+import screenshotr from '../lib';
 
 const screenshots = [
   {
@@ -15,14 +15,14 @@ const screenshots = [
       },
     ],
   },
-  // {
-  //   url: 'https://www.trulicity.com',
-  //   name: 'trulicity-mobile',
-  //   fullPage: true,
-  //   viewport: {
-  //     isMobile: true,
-  //   },
-  // },
+  {
+    url: 'https://www.trulicity.com',
+    name: 'trulicity-mobile',
+    fullPage: true,
+    viewport: {
+      isMobile: true,
+    },
+  },
 ];
 
 screenshotr({

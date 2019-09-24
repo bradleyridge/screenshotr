@@ -53,14 +53,16 @@ var _default = async ({
 
     await browser.close();
     browser = null;
+    const successfulResults = results.filter(result => !result.error);
+
+    _utils.log.succeed(`Captured ${successfulResults.length} Screenshots with Screenshotr`);
+
     return results;
   } catch (error) {
     _utils.log.error(`Screenshotr Failed: ${error}`);
   }
 
   (0, _tryToCloseBrowser.default)(browser);
-
-  _utils.log.succeed(`Captured ${screenshots.length} Screenshots with Screenshotr`);
 };
 
 exports.default = _default;

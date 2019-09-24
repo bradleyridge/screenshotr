@@ -1,6 +1,6 @@
 import path from 'path';
 
-import screenshotr from '../lib';
+import screenshotr from '../build/lib';
 
 const screenshots = [
   {

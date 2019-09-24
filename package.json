@@ -1,0 +1,40 @@
+{
+  "name": "screenshotr",
+  "version": "1.0.0",
+  "description": "Puppeteer screenshot utility executing on URL screenshot configurations.",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "env-cmd babel-node examples/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradleyridge/screenshotr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradleyridge/screenshotr/issues"
+  },
+  "homepage": "https://github.com/bradleyridge/screenshotr#readme",
+  "dependencies": {
+    "12factor-config": "^2.0.0",
+    "chalk": "^2.4.2",
+    "fs": "0.0.1-security",
+    "log": "^6.0.0",
+    "puppeteer": "^1.20.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "env-cmd": "^10.0.1",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.2"
+  }
+}

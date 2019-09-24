@@ -26,6 +26,6 @@ const screenshots = [
 ];
 
 screenshotr({
-  destination: path.join(__dirname, '..', '/.temp'),
+  // destination: path.join(__dirname, '..', '/.temp'),
   screenshots,
 });

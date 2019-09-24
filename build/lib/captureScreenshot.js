@@ -11,6 +11,8 @@ var _utils = require("./utils");
 
 var _viewport = require("../config/viewport");
 
+var _config = _interopRequireDefault(require("../config"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const getViewport = opts => {
@@ -48,7 +50,7 @@ const executeManipulation = async (manipulations, page) => {
   if (manipulations.length > 0) executeManipulation(manipulations, page);
 };
 
-var _default = async (screenshot, page, destinationFolder) => {
+var _default = async (screenshot, page, destinationFolder = _config.default.destination) => {
   const {
     url,
     fullPage,

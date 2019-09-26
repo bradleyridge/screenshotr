@@ -14,7 +14,8 @@ var _config = _interopRequireDefault(require("../config"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const launchBrowser = () => _puppeteer.default.launch({
-  headless: _config.default.headless
+  headless: _config.default.headless,
+  args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
 });
 
 var _default = async () => {
